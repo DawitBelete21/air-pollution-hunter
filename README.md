@@ -1,4 +1,4 @@
-# Air & Water Pollution Hunter — Streamlit website
+# Air Pollution Hunter — Streamlit website
 
 ## Run locally
 1. Install Python 3.10 or newer.
