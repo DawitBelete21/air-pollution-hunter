@@ -19,12 +19,13 @@ SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY"
 Use the Supabase **Project URL** and **Publishable key** (or legacy anon key). Never put a Supabase secret/service_role key in GitHub or Streamlit's public source code.
 
 ## Supabase setup
-1. In Supabase, open SQL Editor and run the database setup SQL previously provided for this project. It creates `profiles`, `uploads`, `sensor_readings`, the profile trigger, RLS policies, and the private `pollution-files` bucket.
-2. In Authentication → Sign In / Providers → Email, keep Email enabled and turn **Confirm email OFF**. The app maps usernames to internal synthetic email identifiers; users only enter usernames and passwords.
-3. Deploy this repository on Streamlit Community Cloud with the two secrets above.
-4. Open the deployed website and create your own account first.
-5. In Supabase SQL Editor, open `make_admin.sql`, replace `REPLACE_WITH_YOUR_USERNAME` with your exact username, and run it. Verify the result says `admin`.
-6. Log out and back into the website. Your sidebar should show Administrator and the Excel upload controls should appear.
+1. In Supabase SQL Editor, run the original database setup SQL already provided in this project. It creates `profiles`, `uploads`, `sensor_readings`, the profile trigger, RLS policies, and the private `pollution-files` bucket.
+2. Run the complete contents of `permissions_setup.sql` once in SQL Editor. This grants the minimum Data API table permissions used by the app; RLS still decides which rows each user can access.
+3. In Authentication → Sign In / Providers → Email, keep Email enabled and turn **Confirm email OFF**. The app maps usernames to internal synthetic email identifiers; users only enter usernames and passwords.
+4. Deploy this repository on Streamlit Community Cloud with the two secrets above.
+5. Open the deployed website and create your own account first.
+6. In Supabase SQL Editor, open `make_admin.sql`, replace `REPLACE_WITH_YOUR_USERNAME` with your exact username, and run it. Verify the result says `admin`.
+7. Log out and back into the website. Your sidebar should show Administrator and the Excel upload controls should appear.
 
 ## Account notes
 - Usernames are 3–24 characters: lowercase letters, numbers, dot, underscore, or hyphen.
