@@ -3,9 +3,9 @@
 -- This promotes that one account to administrator.
 update public.profiles
 set role = 'admin'
-where username = 'REPLACE_WITH_YOUR_USERNAME';
+where username = 'dawit123';
 
 -- Verify the result. The role should show "admin".
 select username, role
 from public.profiles
-where username = 'REPLACE_WITH_YOUR_USERNAME';
+where username = 'dawit123';
